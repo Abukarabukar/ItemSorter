@@ -6,6 +6,7 @@ import rocks.zipcode.io.Item;
 import rocks.zipcode.io.ItemSorter;
 import rocks.zipcode.io.comparators.IdComparator;
 import rocks.zipcode.io.comparators.IdComparator;
+import rocks.zipcode.io.comparators.PriceComparator;
 
 import java.util.Comparator;
 
@@ -23,7 +24,7 @@ public class SortByIdTest {
         Item[] itemsToSort = {item2, item1, item3};
         Item[] expected = {item3, item2, item1};
         ItemSorter itemSorter = new ItemSorter(itemsToSort);
-        Comparator<Item> comparator = (Comparator<Item>) new IdComparator();
+        Comparator<Item> comparator = (Comparator<Item>) new PriceComparator();
 
         // when
         Item[] actual = itemSorter.sort(comparator);
